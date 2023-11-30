@@ -38,41 +38,52 @@
 
             if (computerChoice == "rock" && playerChoice == "rock") {
                 console.log("tie");
+                console.log(`The score is ${score[0]} - ${score[1]}`);
                 return score;
             }   else if (computerChoice == "rock" && playerChoice == "paper") {
                 console.log("The player wins!");
                 score[1] = score[1] + 1;
+                console.log(`The score is ${score[0]} - ${score[1]}`);
                 return score;
             }   else if (computerChoice == "rock" && playerChoice == "scissors") {
                 console.log("The computer wins!");
                 score[0] = score[0] + 1;
+                console.log(`The score is ${score[0]} - ${score[1]}`);
                 return score;
             }   else if (computerChoice == "paper" && playerChoice == "rock") {
                 console.log("The computer wins!");
                 score[0] = score[0] + 1;
+                console.log(`The score is ${score[0]} - ${score[1]}`);
                 return score;
             }   else if (computerChoice == "paper" && playerChoice == "paper") {
                 console.log("tie");
+                console.log(`The score is ${score[0]} - ${score[1]}`);
                 return score;
             }   else if (computerChoice == "paper" && playerChoice == "scissors") {
                 console.log("The player wins!");
                 score[1] = score[1] + 1;
+                console.log(`The score is ${score[0]} - ${score[1]}`);
                 return score;
             }   else if (computerChoice == "scissors" && playerChoice == "rock") {
                 console.log("The player wins!");
                 score[1] = score[1] + 1;
+                console.log(`The score is ${score[0]} - ${score[1]}`);
                 return score;
             }   else if (computerChoice == "scissors" && playerChoice == "paper") {
                 console.log("The computer wins!");
                 score[0] = score[0] + 1;
+                console.log(`The score is ${score[0]} - ${score[1]}`);
                 return score;
             }   else if (computerChoice == "scissors" && playerChoice == "scissors") {
                 console.log("tie");
+                console.log(`The score is ${score[0]} - ${score[1]}`);
                 return score;
             }
 
         }
         
+        // Checks if best of five Rock, Paper, Scissors game is over
+
         function gameOver(score) {
             if (score[0] == 3) {
                 console.log("The computer wins the game!");
@@ -85,7 +96,7 @@
             }
         }
 
-        
+        // Simulates a best of five game of Rock, Paper, Scissors
 
         function game() {
             
