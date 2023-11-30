@@ -4,6 +4,8 @@
     <title>Document</title>
     <script>
 
+        // Randomly generates play from the computer player
+
         function getComputerChoice() {
             let choice = Math.floor(Math.random() * 3);
             if (choice == 0) {
@@ -15,6 +17,8 @@
             }
         }
         
+        // Prompts player to enter play choice for next round
+
         function getPlayerChoice() {
             let choice = prompt("Please enter your play: 'rock' , 'paper' , or 'scissors'.");
             choice = choice.toLowerCase();
@@ -28,8 +32,33 @@
             
         }
 
-        getPlayerChoice();
+        // Simulates a round of rock, paper, scissors
 
+        function playRound(computerChoice , playerChoice) {
+
+            if (computerChoice == "rock" && playerChoice == "rock") {
+                console.log("tie");
+            }   else if (computerChoice == "rock" && playerChoice == "paper") {
+                console.log("The player wins!");
+            }   else if (computerChoice == "rock" && playerChoice == "scissors") {
+                console.log("The computer wins!");
+            }   else if (computerChoice == "paper" && playerChoice == "rock") {
+                console.log("The computer wins!");
+            }   else if (computerChoice == "paper" && playerChoice == "paper") {
+                console.log("tie");
+            }   else if (computerChoice == "paper" && playerChoice == "scissors") {
+                console.log("The player wins!");
+            }   else if (computerChoice == "scissors" && playerChoice == "rock") {
+                console.log("The player wins!");
+            }   else if (computerChoice == "scissors" && playerChoice == "paper") {
+                console.log("The computer wins!");
+            }   else if (computerChoice == "scissors" && playerChoice == "scissors") {
+                console.log("tie");
+            }
+
+        }
+        
+        playRound("scissors" , "scissors");
 
 
 
