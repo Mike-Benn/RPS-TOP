@@ -3,20 +3,36 @@
 <head>
     <title>Document</title>
     <script>
+
         function getComputerChoice() {
             let choice = Math.floor(Math.random() * 3);
             if (choice == 0) {
                 return "rock";
             }   if (choice == 1) {
-                return "scissors";
-            }   else {
                 return "paper";
+            }   else {
+                return "scissors";
             }
         }
-
         
+        function getPlayerChoice() {
+            let choice = prompt("Please enter your play: 'rock' , 'paper' , or 'scissors'.");
+            choice = choice.toLowerCase();
 
-        getComputerChoice();
+            if (choice == 'rock' || choice == 'paper' || choice == 'scissors') {
+                console.log(choice);
+                return choice;
+            }   else {
+                return getPlayerChoice();
+            }
+            
+        }
+
+        getPlayerChoice();
+
+
+
+
     </script>
 </head>
 <body>
