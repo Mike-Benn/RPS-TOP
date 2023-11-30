@@ -34,31 +34,72 @@
 
         // Simulates a round of rock, paper, scissors
 
-        function playRound(computerChoice , playerChoice) {
+        function playRound(computerChoice , playerChoice , score) {
 
             if (computerChoice == "rock" && playerChoice == "rock") {
                 console.log("tie");
+                return score;
             }   else if (computerChoice == "rock" && playerChoice == "paper") {
                 console.log("The player wins!");
+                score[1] = score[1] + 1;
+                return score;
             }   else if (computerChoice == "rock" && playerChoice == "scissors") {
                 console.log("The computer wins!");
+                score[0] = score[0] + 1;
+                return score;
             }   else if (computerChoice == "paper" && playerChoice == "rock") {
                 console.log("The computer wins!");
+                score[0] = score[0] + 1;
+                return score;
             }   else if (computerChoice == "paper" && playerChoice == "paper") {
                 console.log("tie");
+                return score;
             }   else if (computerChoice == "paper" && playerChoice == "scissors") {
                 console.log("The player wins!");
+                score[1] = score[1] + 1;
+                return score;
             }   else if (computerChoice == "scissors" && playerChoice == "rock") {
                 console.log("The player wins!");
+                score[1] = score[1] + 1;
+                return score;
             }   else if (computerChoice == "scissors" && playerChoice == "paper") {
                 console.log("The computer wins!");
+                score[0] = score[0] + 1;
+                return score;
             }   else if (computerChoice == "scissors" && playerChoice == "scissors") {
                 console.log("tie");
+                return score;
             }
 
         }
         
-        playRound("scissors" , "scissors");
+        function gameOver(score) {
+            if (score[0] == 3) {
+                console.log("The computer wins the game!");
+                return true;
+            } else if (score[1] == 3) {
+                console.log("The player wins the game!")
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        
+
+        function game() {
+            
+            score = [0 , 0];
+            while (gameOver(score) == false) {
+                computerChoice = getComputerChoice();
+                playerChoice = getPlayerChoice();
+                score = playRound(computerChoice , playerChoice , score);
+                
+
+            }
+        }
+
+        game();
 
 
 
