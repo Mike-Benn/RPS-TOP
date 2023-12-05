@@ -1,0 +1,20 @@
+.button-container , .score-board , .player-score , .computer-score , .game-name {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap: 45px
+}
+
+.player-score , .computer-score {
+    flex-direction: column;
+    gap: 0px;
+}
+
+.player-points , .computer-points {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.score-board {
+    margin-bottom: 5rem;
+}
