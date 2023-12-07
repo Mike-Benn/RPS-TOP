@@ -41,45 +41,45 @@ function getPlayerChoice() {
 function playRound(computerChoice , playerChoice , score) {
 
     if (computerChoice == "rock" && playerChoice == "rock") {
-        messageLog.textContent = 'The round is a tie, both players selected rock!'
+        messageLog.textContent = "This round is a tie, both players selected rock!";
         console.log(`The score is ${score[0]} - ${score[1]}`);
         return score;
     }   else if (computerChoice == "rock" && playerChoice == "paper") {
-        console.log("The player wins!");
+        messageLog.textContent = "You won this round by selecting paper!";
         score[1] = score[1] + 1;
         console.log(`The score is ${score[0]} - ${score[1]}`);
         return score;
     }   else if (computerChoice == "rock" && playerChoice == "scissors") {
-        console.log("The computer wins!");
+        messageLog.textContent =  "You lost this round, the computer selected rock!";
         score[0] = score[0] + 1;
         console.log(`The score is ${score[0]} - ${score[1]}`);
         return score;
     }   else if (computerChoice == "paper" && playerChoice == "rock") {
-        console.log("The computer wins!");
+        messageLog.textContent = "You lost this round, the computer selected paper!";
         score[0] = score[0] + 1;
         console.log(`The score is ${score[0]} - ${score[1]}`);
         return score;
     }   else if (computerChoice == "paper" && playerChoice == "paper") {
-        console.log("tie");
+        messageLog.textContent = "This round is a tie, both players selected paper!";
         console.log(`The score is ${score[0]} - ${score[1]}`);
         return score;
     }   else if (computerChoice == "paper" && playerChoice == "scissors") {
-        console.log("The player wins!");
+        messageLog.textContent = "You won this round by selecting scissors!";
         score[1] = score[1] + 1;
         console.log(`The score is ${score[0]} - ${score[1]}`);
         return score;
     }   else if (computerChoice == "scissors" && playerChoice == "rock") {
-        console.log("The player wins!");
+        messageLog.textContent = "You won this round by selecting rock!";
         score[1] = score[1] + 1;
         console.log(`The score is ${score[0]} - ${score[1]}`);
         return score;
     }   else if (computerChoice == "scissors" && playerChoice == "paper") {
-        console.log("The computer wins!");
+        messageLog.textContent = "You lost this round, the computer selected scissors!";
         score[0] = score[0] + 1;
         console.log(`The score is ${score[0]} - ${score[1]}`);
         return score;
     }   else if (computerChoice == "scissors" && playerChoice == "scissors") {
-        console.log("tie");
+        messageLog.textContent = "This round is a tie, both players selected paper!";
         console.log(`The score is ${score[0]} - ${score[1]}`);
         return score;
     }
