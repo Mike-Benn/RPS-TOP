@@ -1,4 +1,12 @@
 
+const rock = document.querySelector('#rock');
+const paper = document.querySelector('#paper');
+const scissors = document.querySelector('#scissors');
+const playerPoints = document.querySelector('#player-points');
+const computerPoints = document.querySelector('#computer-points');
+const messageLog = document.querySelector('.round-message');
+let score = [0 , 0];
+
 
 // Randomly generates play from the computer player
 
@@ -33,7 +41,7 @@ function getPlayerChoice() {
 function playRound(computerChoice , playerChoice , score) {
 
     if (computerChoice == "rock" && playerChoice == "rock") {
-        console.log("tie");
+        messageLog.textContent = 'The round is a tie, both players selected rock!'
         console.log(`The score is ${score[0]} - ${score[1]}`);
         return score;
     }   else if (computerChoice == "rock" && playerChoice == "paper") {
@@ -105,14 +113,65 @@ function game() {
 
     }
 }
-
-
-
-
-const rock = document.querySelector('#rock');
-const paper = document.querySelector('#paper');
-const scissors = document.querySelector('#scissors')
-
+/*
+function gameNew() {
+    score = [0 , 0];
+    while(gameOver(score) == false) {
+        computerChoice = getComputerChoice();
+        rock.addEventListener('click' , (e) => {
+            playerChoice = 'rock';
+            score = playRound(computerChoice , playerChoice , score);
+            console.log('' + score[0] + score[1]);
+        })
+        paper.addEventListener('click' , (e) => {
+            playerChoice = 'paper';
+            score = playRound(computerChoice , playerChoice , score);
+            console.log('' + score[0] + score[1]);
+        })
+        scissors.addEventListener('click' , (e) => {
+            playerChoice = 'scissors';
+            score = playRound(computerChoice , playerChoice , score);
+            console.log('' + score[0] + score[1]);
+        })
+    }
+}
+*/
 rock.addEventListener('click' , (e) => {
+    computerChoice = getComputerChoice();
+    playerChoice = 'rock';
+    score = playRound(computerChoice , playerChoice , score);
+    computerPoints.textContent = score[0];
+    playerPoints.textContent = score[1];
+    if (gameOver(score) == true) {
+        computerPoints.textContent = '0';
+        playerPoints.textContent = '0';
+        score = [0 , 0];
+    }
     
+})
+
+paper.addEventListener('click' , (e) => {
+    computerChoice = getComputerChoice();
+    playerChoice = 'paper';
+    score = playRound(computerChoice , playerChoice , score);
+    computerPoints.textContent = score[0];
+    playerPoints.textContent = score[1];
+    if (gameOver(score) == true) {
+        computerPoints.textContent = '0';
+        playerPoints.textContent = '0';
+        score = [0 , 0];
+    }
+})
+
+scissors.addEventListener('click' , (e) => {
+    computerChoice = getComputerChoice();
+    playerChoice = 'rock';
+    score = playRound(computerChoice , playerChoice , score);
+    computerPoints.textContent = score[0];
+    playerPoints.textContent = score[1];
+    if (gameOver(score) == true) {
+        computerPoints.textContent = '0';
+        playerPoints.textContent = '0';
+        score = [0 , 0];
+    }
 })
