@@ -9,6 +9,11 @@ body {
     gap: 45px
 }
 
+.cute {
+    width: 150px;
+    height: 150px;
+}
+
 .player-score , .computer-score {
     flex-direction: column;
     gap: 0px;
@@ -23,8 +28,15 @@ body {
     margin-bottom: 5rem;
 }
 
-#play-image {
+#rock , #paper , #scissors  {
     width: 100px;
     height: 100px;
+    transition: transform .2s;
     
 }
+
+#rock:hover , #paper:hover , #scissors:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
