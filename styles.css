@@ -2,7 +2,7 @@ body {
     background-image: url(../RPS-TOP/images/background.png);
 }
 
-.button-container , .score-board , .player-score , .computer-score , .game-name , .game-log {
+.button-container , .score-board , .player-score , .computer-score , .game-name , .game-log , .game-rules {
     display: flex;
     justify-content: center;
     align-content: center;
