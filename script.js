@@ -42,45 +42,66 @@ function playRound(computerChoice , playerChoice , score) {
 
     if (computerChoice == "rock" && playerChoice == "rock") {
         messageLog.textContent = "This round is a tie, both players selected rock!";
-        console.log(`The score is ${score[0]} - ${score[1]}`);
         return score;
     }   else if (computerChoice == "rock" && playerChoice == "paper") {
-        messageLog.textContent = "You won this round by selecting paper!";
         score[1] = score[1] + 1;
-        console.log(`The score is ${score[0]} - ${score[1]}`);
-        return score;
+        if (score[1] >= 3) {
+            messageLog.textContent = "You won the game! Congratulations!";
+            return score;
+        } else {
+            messageLog.textContent = "You won this round by selecting paper!";
+            return score;
+        }
     }   else if (computerChoice == "rock" && playerChoice == "scissors") {
-        messageLog.textContent =  "You lost this round, the computer selected rock!";
         score[0] = score[0] + 1;
-        console.log(`The score is ${score[0]} - ${score[1]}`);
-        return score;
+        if (score[0] >= 3) {
+            messageLog.textContent = "You lost the game! Better luck next time!";
+            return score;
+        } else {
+            messageLog.textContent = "You lost this round, the computer selected rock!";
+            return score;
+        }
     }   else if (computerChoice == "paper" && playerChoice == "rock") {
-        messageLog.textContent = "You lost this round, the computer selected paper!";
         score[0] = score[0] + 1;
-        console.log(`The score is ${score[0]} - ${score[1]}`);
-        return score;
+        if (score[0] >= 3) {
+            messageLog.textContent = "You lost the game! Better luck next time!";
+            return score;
+        } else {
+            messageLog.textContent = "You lost this round, the computer selected paper!";
+            return score;
+        }
     }   else if (computerChoice == "paper" && playerChoice == "paper") {
         messageLog.textContent = "This round is a tie, both players selected paper!";
-        console.log(`The score is ${score[0]} - ${score[1]}`);
         return score;
     }   else if (computerChoice == "paper" && playerChoice == "scissors") {
-        messageLog.textContent = "You won this round by selecting scissors!";
         score[1] = score[1] + 1;
-        console.log(`The score is ${score[0]} - ${score[1]}`);
-        return score;
+        if (score[1] >= 3) {
+            messageLog.textContent = "You won the game! Congratulations!";
+            return score;
+        } else {
+            messageLog.textContent = "You won this round by selecting scissors!";
+            return score;
+        }
     }   else if (computerChoice == "scissors" && playerChoice == "rock") {
-        messageLog.textContent = "You won this round by selecting rock!";
         score[1] = score[1] + 1;
-        console.log(`The score is ${score[0]} - ${score[1]}`);
-        return score;
+        if (score[1] >= 3) {
+            messageLog.textContent = "You won the game! Congratulations!";
+            return score;
+        } else {
+            messageLog.textContent = "You won this round by selecting rock!";
+            return score;
+        }
     }   else if (computerChoice == "scissors" && playerChoice == "paper") {
-        messageLog.textContent = "You lost this round, the computer selected scissors!";
         score[0] = score[0] + 1;
-        console.log(`The score is ${score[0]} - ${score[1]}`);
-        return score;
+        if (score[0] >= 3) {
+            messageLog.textContent = "You lost the game! Better luck next time!";
+            return score;
+        } else {
+            messageLog.textContent = "You lost this round, the computer selected scissors!";
+            return score;
+        }
     }   else if (computerChoice == "scissors" && playerChoice == "scissors") {
         messageLog.textContent = "This round is a tie, both players selected scissors!";
-        console.log(`The score is ${score[0]} - ${score[1]}`);
         return score;
     }
 
