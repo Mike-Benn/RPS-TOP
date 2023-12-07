@@ -79,7 +79,7 @@ function playRound(computerChoice , playerChoice , score) {
         console.log(`The score is ${score[0]} - ${score[1]}`);
         return score;
     }   else if (computerChoice == "scissors" && playerChoice == "scissors") {
-        messageLog.textContent = "This round is a tie, both players selected paper!";
+        messageLog.textContent = "This round is a tie, both players selected scissors!";
         console.log(`The score is ${score[0]} - ${score[1]}`);
         return score;
     }
@@ -165,7 +165,7 @@ paper.addEventListener('click' , (e) => {
 
 scissors.addEventListener('click' , (e) => {
     computerChoice = getComputerChoice();
-    playerChoice = 'rock';
+    playerChoice = 'scissors';
     score = playRound(computerChoice , playerChoice , score);
     computerPoints.textContent = score[0];
     playerPoints.textContent = score[1];
