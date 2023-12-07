@@ -1,4 +1,4 @@
-.button-container , .score-board , .player-score , .computer-score , .game-name {
+.button-container , .score-board , .player-score , .computer-score , .game-name , .game-log {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -10,7 +10,7 @@
     gap: 0px;
 }
 
-.player-points , .computer-points {
+#player-points , #computer-points {
     margin-left: auto;
     margin-right: auto;
 }
