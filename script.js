@@ -1,7 +1,8 @@
-
+const rockImage = document.querySelector('#play-image');
 const rock = document.querySelector('#rock');
 const paper = document.querySelector('#paper');
 const scissors = document.querySelector('#scissors');
+const reset = document.querySelector('#reset');
 const playerPoints = document.querySelector('#player-points');
 const computerPoints = document.querySelector('#computer-points');
 const messageLog = document.querySelector('.round-message');
@@ -195,4 +196,25 @@ scissors.addEventListener('click' , (e) => {
         playerPoints.textContent = '0';
         score = [0 , 0];
     }
+})
+
+reset.addEventListener('click' , (e) => {
+    score = [0 , 0];
+    computerPoints.textContent = "0";
+    playerPoints.textContent = "0";
+    messageLog.textContent = "Choose your play!";
+})
+
+rockImage.addEventListener('click' , (e) => {
+    computerChoice = getComputerChoice();
+    playerChoice = 'rock';
+    score = playRound(computerChoice , playerChoice , score);
+    computerPoints.textContent = score[0];
+    playerPoints.textContent = score[1];
+    if (gameOver(score) == true) {
+        computerPoints.textContent = '0';
+        playerPoints.textContent = '0';
+        score = [0 , 0];
+    }
+    
 })
