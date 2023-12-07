@@ -1,3 +1,7 @@
+body {
+    background-image: url(../RPS-TOP/images/background.png);
+}
+
 .button-container , .score-board , .player-score , .computer-score , .game-name , .game-log {
     display: flex;
     justify-content: center;
@@ -17,4 +21,10 @@
 
 .score-board {
     margin-bottom: 5rem;
+}
+
+#play-image {
+    width: 100px;
+    height: 100px;
+    
 }
