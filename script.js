@@ -204,17 +204,3 @@ reset.addEventListener('click' , (e) => {
     playerPoints.textContent = "0";
     messageLog.textContent = "Choose your play!";
 })
-
-rockImage.addEventListener('click' , (e) => {
-    computerChoice = getComputerChoice();
-    playerChoice = 'rock';
-    score = playRound(computerChoice , playerChoice , score);
-    computerPoints.textContent = score[0];
-    playerPoints.textContent = score[1];
-    if (gameOver(score) == true) {
-        computerPoints.textContent = '0';
-        playerPoints.textContent = '0';
-        score = [0 , 0];
-    }
-    
-})
