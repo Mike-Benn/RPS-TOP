@@ -122,42 +122,8 @@ function gameOver(score) {
     }
 }
 
-// Simulates a best of five game of Rock, Paper, Scissors
+// Simulates round of RPS when player clicks picture of a rock
 
-function game() {
-    
-    score = [0 , 0];
-    while (gameOver(score) == false) {
-        computerChoice = getComputerChoice();
-        playerChoice = getPlayerChoice();
-        score = playRound(computerChoice , playerChoice , score);
-        
-
-    }
-}
-/*
-function gameNew() {
-    score = [0 , 0];
-    while(gameOver(score) == false) {
-        computerChoice = getComputerChoice();
-        rock.addEventListener('click' , (e) => {
-            playerChoice = 'rock';
-            score = playRound(computerChoice , playerChoice , score);
-            console.log('' + score[0] + score[1]);
-        })
-        paper.addEventListener('click' , (e) => {
-            playerChoice = 'paper';
-            score = playRound(computerChoice , playerChoice , score);
-            console.log('' + score[0] + score[1]);
-        })
-        scissors.addEventListener('click' , (e) => {
-            playerChoice = 'scissors';
-            score = playRound(computerChoice , playerChoice , score);
-            console.log('' + score[0] + score[1]);
-        })
-    }
-}
-*/
 rock.addEventListener('click' , (e) => {
     computerChoice = getComputerChoice();
     playerChoice = 'rock';
@@ -172,6 +138,8 @@ rock.addEventListener('click' , (e) => {
     
 })
 
+// Simulates round of RPS when player clicks picture of the piece of paper
+
 paper.addEventListener('click' , (e) => {
     computerChoice = getComputerChoice();
     playerChoice = 'paper';
@@ -185,6 +153,8 @@ paper.addEventListener('click' , (e) => {
     }
 })
 
+// Simulates round of RPS when player clicks picture of the pair of scissors
+
 scissors.addEventListener('click' , (e) => {
     computerChoice = getComputerChoice();
     playerChoice = 'scissors';
@@ -197,6 +167,8 @@ scissors.addEventListener('click' , (e) => {
         score = [0 , 0];
     }
 })
+
+// Resets the scoreboard back to 0 for each game effectively restarting the game
 
 reset.addEventListener('click' , (e) => {
     score = [0 , 0];
